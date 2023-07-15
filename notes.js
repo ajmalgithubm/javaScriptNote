@@ -458,11 +458,114 @@ const users = [
         'age': 26
     }
 ];
+
 for ({ name, age } of users) {
-    console.log(`Name: ${name} Age:${age}`)
+   // console.log(`Name: ${name} Age:${age}`)
 }
+// Spread Oprator Create a Clone of an Object
+user = {
+    name: 'Johne',
+    address: '15th Park Banglore',
+    age: 22,
+    department: {
+        name: 'Sales',
+        shift: 'Morning',
+        address: {
+            city: 'Banglore',
+            street: '7th Residency Street',
+            zip: 589845
+        }
+    }
+};
+let cloneObject = {...user};
+//console.log(cloneObject);
+//console.log(cloneObject == user);
+//Add Properties to Objects
+let updatedObject = {...user,salary:22000}
+//console.log(updatedObject);
+//console.log(user);
+let upadtesProperty = {...user,name:'Alex'};
+//console.log(upadtesProperty);
+//console.log(user);
+user = {
+    name: 'Johne',
+    address: '15th Park Banglore',
+    age: 22,
+    department: {
+        name: 'Sales',
+        shift: 'Morning',
+        address: {
+            city: 'Banglore',
+            street: '7th Residency Street',
+            zip: 589845
+        }
+    }
+};
+const updateDepartment = {
+    ...user,
+    department : {
+        ...user.department,
+        address:{
+            ...user.department.address,
+            phone:98786545
+        }
+    }
+};
+const {
+    department:{
+        address:{
+            phone:phoneNumber
+        }
+    }
+} = updateDepartment;
 
+//console.log(phoneNumber)
+// Merge Two Object
+const employeeProduction = {
+    1 : {
+        name : 'rakesh',
+        age : 25
+    },
+    2:{
+        name:'abinav',
+        age:43
+    }
+}
+const employeeDesign = {
+    1:{
+        name:'Ashfaq',
+        age:66
+    },
+    7:{
+        name :'Ajed',
+        age:34
+    },
+    8:{
+        name:'highj',
+        age:56
+    }
+}
+const totalEmployee = {...employeeDesign, ...employeeProduction};
+//console.log(totalEmployee)
+//the rest parameter helps collect them together
 
+user = {
+    name: 'Johne',
+    address: '15th Park Banglore',
+    age: 22,
+    department: {
+        name: 'Sales',
+        shift: 'Morning',
+        address: {
+            city: 'Banglore',
+            street: '7th Residency Street',
+            zip: 589845
+        }
+    }
+};
+const {name : userName, ...balanceObj} = user;
+console.log(userName);
+console.log(balanceObj);
 
 
 

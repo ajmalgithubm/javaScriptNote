@@ -116,27 +116,27 @@ let student_details = [
     { name: 'Ami P', mark: { maths: 80, physics: 90, chemistry: 100 }, roll_no: 8 }
 ]
 //let eligible_students = [];
-let last_element =   student_details.pop();
+let last_element = student_details.pop();
 //console.log(last_element);
 //console.log(student_details);
-let s = [1,2,3];
+let s = [1, 2, 3];
 //s.push(5,6,7);
 //console.log(s);
 
-let substract_value = s.reduceRight((item,num)=> {
-    return item-num;
+let substract_value = s.reduceRight((item, num) => {
+    return item - num;
 })
 //console.log(substract_value)
 let substractValue = 0;
 s.forEach((item, index, aray) => {
-    if(index === aray.length-1){
+    if (index === aray.length - 1) {
         substractValue -= item;
-    }else{
-        substractValue+= item;
+    } else {
+        substractValue += item;
     }
 })
 //console.log(substractValue)
-s =[1,2,3,4,5,6,7,18];
+s = [1, 2, 3, 4, 5, 6, 7, 18];
 //let c = s.reverse()
 //console.log(s);
 //console.log("array c :"+c);
@@ -144,7 +144,7 @@ s =[1,2,3,4,5,6,7,18];
 //console.log(fisrt_value);
 fruits = ['Apple', "Mango", "Grapes", "PinaApple", 'WaterMelon'];
 
-let newFruits = fruits.map((item,index,array) => {
+let newFruits = fruits.map((item, index, array) => {
     return item
 })
 newFruits.reverse()
@@ -162,12 +162,12 @@ newFruits.reverse()
 //console.log(fruits);
 //let sliced_value = fruits.slice(1,4)
 //console.log(sliced_value);
-let check_mango_available =  fruits.find((item) => {
+let check_mango_available = fruits.find((item) => {
     return item === "Mango";
 })
 
 let some_condition = fruits.some((item) => {
-    return item ==="Mango";
+    return item === "Mango";
 })
 //console.log(check_mango_available, some_condition);
 s = [4, 12, 16, 20, 22];
@@ -181,34 +181,34 @@ let check_number_include_inList = (num) => {
 let getFormatDate = () => {
     let date = new Date();
     let day = date.getDate();
-    let month = date.getMonth()+1;
+    let month = date.getMonth() + 1;
     let year = date.getFullYear();
-    if(day<10 && month<10){
-        return '0'+month+'/'+'0'+day+'/'+year
-    }else if(month < 10 && day > 10){
+    if (day < 10 && month < 10) {
+        return '0' + month + '/' + '0' + day + '/' + year
+    } else if (month < 10 && day > 10) {
         return '0' + month + '/' + day + '/' + year
-    } else if(day < 10 && month > 10){
-        return  month + '/' + '0' + day + '/' + year
+    } else if (day < 10 && month > 10) {
+        return month + '/' + '0' + day + '/' + year
     }
-    return month+'/'+day+'/'+year
+    return month + '/' + day + '/' + year
 }
 //console.log(getFormatDate());
 const person = {
 };
 fruits = ['Apple', 'Banana', "Pineapple", "Mango", "Robust"];
-let keys1 =person.toString();
+let keys1 = person.toString();
 person.firstName = 'Ajmal';
-person.lastName ='M';
+person.lastName = 'M';
 person.age = 22;
 person.roll_number = 17;
 person.fullName = () => {
     return person.firstName + ' ' + person.lastName;
 }
-s = ["Ajmal",'ami','ahi'];
+s = ["Ajmal", 'ami', 'ahi'];
 let name = 'Ajmal M';
 // delete person.age;    delete property of the object by keyWord Delete 
 //delete person.fullName;
-for(let x in person){
+for (let x in person) {
     // console.log(person[x])
 }
 //It is a common practice to declare objects with the const keyword.
@@ -226,20 +226,20 @@ const myObj = {
     ]
 }
 //console.log(myObj?.cars?.car3)
-for(let index in myObj.cars){
-    for(let property_car in myObj.cars[index]){
-       if(property_car === 'name'){
-        // console.log(myObj.cars[index].name)
-       } else{
-        for(let index_model in myObj.cars[index].models){
-           //  console.log(myObj.cars[index].models[index_model]);
+for (let index in myObj.cars) {
+    for (let property_car in myObj.cars[index]) {
+        if (property_car === 'name') {
+            // console.log(myObj.cars[index].name)
+        } else {
+            for (let index_model in myObj.cars[index].models) {
+                //  console.log(myObj.cars[index].models[index_model]);
+            }
         }
-       }
     }
 }
-for(let index in myObj.cars){
+for (let index in myObj.cars) {
     //console.log(myObj.cars[index].name);
-    for(let model_index in myObj.cars[index].models){
+    for (let model_index in myObj.cars[index].models) {
         //console.log(myObj.cars[index].models[model_index])
     }
 }
@@ -251,20 +251,20 @@ let values = Object.values(myObj);
 //console.log(values);
 //JavaScript can secure better data quality when using getters and setters.
 let person3 = {
-    firstName :'AJMAL',
-    lastName : 'M',
-    language : 'MALAYALAM',
-    getFirstName:function(){
+    firstName: 'AJMAL',
+    lastName: 'M',
+    language: 'MALAYALAM',
+    getFirstName: function () {
         return this.firstName
     },
-    setFirstName : function(name){
+    setFirstName: function (name) {
         this.firstName = name;
     }
-    
-    
+
+
 }
 //console.log(person3.firstName)
-function person_information(first, last, age, num){
+function person_information(first, last, age, num) {
     this.firstName = first;
     this.lastName = last;
     this.age = age;
@@ -282,9 +282,9 @@ var myObj1 = {
 //Iterating Over a String
 let num_list = [100, 23, 123, 450, 435];
 //for(let x of myObj1){
-    //myObj1 is not iterable
+//myObj1 is not iterable
 //}
-for(let x in num_list){
+for (let x in num_list) {
     //console.log(num_list[x])
 }
 
@@ -317,19 +317,19 @@ letters.add("a");
 letters.forEach((item) => {
     //console.log(item)
 })
-function myFunction(a,b){
-    return a*b;
+function myFunction(a, b) {
+    return a * b;
 }
- let product_two_number = (a, b) => a*b;
- //console.log(product_two_number(10,20));
+let product_two_number = (a, b) => a * b;
+//console.log(product_two_number(10,20));
 
- function sum(...args){
-    console.log("This is args "+ args);
-    console.log(typeof(args))
-    for(let arg in args){
+function sum(...args) {
+    console.log("This is args " + args);
+    console.log(typeof (args))
+    for (let arg in args) {
         console.log(arg)
     }
- }
+}
 //sum([1,2,3,4,5])
 function myFunction(arg1, arg2) {
     this.firstName = arg1;
@@ -343,21 +343,124 @@ const my_object = new myFunction("John", "Doe");
 //console.log(my_object.lastName);
 
 let person10 = {
-    fullName : function (countery){
-        return this.firstName + ' ' + this.lastName +' '+ countery;
+    fullName: function (countery) {
+        return this.firstName + ' ' + this.lastName + ' ' + countery;
     }
 }
 let person1 = {
-    firstName : 'Akhil',
-    lastName : 'pp'
+    firstName: 'Akhil',
+    lastName: 'pp'
 }
 let person2 = {
-    firstName : 'Akshay',
-    lastName:'suresh'
+    firstName: 'Akshay',
+    lastName: 'suresh'
 }
 //console.log(person10.fullName.call(person1, "india"));
 //console.log(person10.fullName.call(person2, "canada"))
+// array de structuring 
+let animals = ['Cat', 'Dog', 'Elephant', 'zibra', 'tiger', 'lion', 'giraffe'];
+const animalObj = {
+    name: 'Cat',
+    age: 2
+};
+[a, b, ...c] = animals;
+//{name, age } = animalObj;
+//let animalName = animalObj.name;
+//let animalAge = animalObj.age;
 
+// This proccess Done Object destructuring.. 
+//JavaScript Object Destructuring is the syntax for extracting values from an object property and assigning them to a variable.
+// The destructuring is also possible for JavaScript Arrays
+let { name: animalName, age: animalAge, details = `Name:${animalName} Age:${animalAge}` } = animalObj;
+//age_ = 20;
+//console.log(animalName, animalAge, details);
+//console.log(animalObj);
+//console.log(animalObj);
+//console.log(animalName);
+//console.log(animalAge);
+student_details = [
+    { name: 'Ajmal M', mark: { maths: 60, physics: 80, chemistry: 100 }, roll_no: 17 },
+    { name: 'Najiya M', mark: { maths: 20, physics: 80, chemistry: 70 }, roll_no: 22 },
+    { name: 'Ahiyan M', mark: { maths: 60, physics: 60, chemistry: 80 }, roll_no: 2 },
+    { name: 'Ivan M', mark: { maths: 60, physics: 60, chemistry: 90 }, roll_no: 45 },
+    { name: 'Ami P', mark: { maths: 80, physics: 90, chemistry: 100 }, roll_no: 8 }
+];
+let studentQualifiedList = {
+    qualified: [],
+    unQualified: []
+};
+for (let { name: studentName, mark: studentMarks } of student_details) {
+    let isEligible = true;
+    for (let subject in studentMarks) {
+        if (studentMarks[subject] < 50) {
+            isEligible = false;
+            break;
+        }
+    }
+    if (isEligible) {
+        studentQualifiedList.qualified.push(studentName);
+    } else {
+        studentQualifiedList.unQualified.push(studentName);
+    }
+
+}
+
+//console.log(studentQualifiedList)
+let user = {
+    name: 'Johne',
+    address: '15th Park Banglore',
+    age: 22,
+    department: {
+        name: 'Sales',
+        shift: 'Morning',
+        address: {
+            city: 'Banglore',
+            street: '7th Residency Street',
+            zip: 589845
+        }
+    }
+}
+let { department: { address: { zip: pinCode } } } = user;
+let { department: { address: { city: Town } } } = user
+const getValue = (value) => {
+    let { [value]: returnValue } = user;
+    return returnValue;
+}
+const getLogDetails = ({ name, age }, key) => {
+    const { [key]: personAddress } = user;
+    console.log(`Name: ${name}, age:${age}, address:${personAddress}`);
+}
+const getUser = () => {
+    return (
+        {
+            name: 'Alex',
+            age: 33,
+            address: 'Banglore North'
+        }
+    )
+}
+//const {name:personName, age:personAge }= getUser();
+//console.log(personName, personAge);
+const users = [
+    {
+        'name': 'Alex',
+        'address': '15th Park Avenue',
+        'age': 43
+    },
+    {
+        'name': 'Bob',
+        'address': 'Canada',
+        'age': 53
+    },
+    {
+        'name': 'Carl',
+        'address': 'Bangalore',
+        'age': 26
+    }
+];
+for ({ name, age } of users) {
+    console.log(`Name: ${name} Age:${age}`)
+}
 
 
 

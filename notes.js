@@ -564,10 +564,63 @@ user = {
     }
 };
 const {name : userName, ...balanceObj} = user;
-console.log(userName);
-console.log(balanceObj);
-
-
-
-
-
+//console.log(userName);
+//console.log(balanceObj);
+//What Does "Non-Blocking" Mean?
+//When a programming language is said to be non - blocking,
+//it means that the language does not wait for a specific previous instruction to finish executing before
+// it moves to the next one
+//What Does "Non-Blocking" Mean?
+//When a programming language is said to be non - blocking, it means that the language does not wait for
+//a specific previous instruction to finish executing before it moves to the next one
+//What Does "Asynchronous" Mean?
+//JavaScript is also asynchronous(async),
+//which means that it can handle a large number of tasks at a time
+//A callback is any function that is a parameter of an async function,
+// which the async function invokes to complete its operation.
+//To call an async function, you had to pass a callback as an argument like this:
+function callback(result) {
+    // Use the result from the Async operation
+}
+//randomAsyncOperation((response) => callback(response));
+//If the promise is successful, it will produce a resolved value
+//To create a promise, you need to create an instance object using the Promise constructor function
+//The Promise constructor function takes in one parameter.
+//That parameter is a function that defines when to resolve the new promise, and
+//optionally when to reject it.
+//Here is yet another example showing how you can resolve or reject a promise based on the conditions you set
+const promise = new Promise((resolve, reject) => {
+    const num = Math.random();
+    if (num >= 0.5) {
+        resolve("Promise is fulfilled!");
+    } else {
+        reject("Promise failed!");
+    }
+}).then(handleResolve, handleRejecte);
+function handleResolve(value){
+    //console.log(value)
+}
+function handleRejecte(error){
+    //console.log(error);
+}
+//Promise.resolve("Successful").then((result) => console.log(result));
+txt = 'tex';
+var num = 6;
+const string = `Something ${txt ==='text'?"text":"none"}`;
+//console.log(string);
+/*dosomething(result => {
+    doSomethingElse(anotherResult => {
+        doSomethingElseAgain(yetAnotherResult => {
+            console.log(result)
+        })
+    })
+})*/
+const doSomething = async () => {
+    const data = await getData();
+    //console.log(data);
+}
+fetch('https://dummyjson.com/products').then((data) => {
+    return data.json()
+}).then((data) => {
+    console.log(data.products[0].images[0])
+})
